@@ -1,0 +1,72 @@
+/* App.css - Custom Styling Komponen Landing Page */
+
+/* Gaya Tombol Kustom */
+.btn-custom {
+  background-color: #0d9488;
+  color: #ffffff;
+  border: 1px solid #0d9488;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-custom:hover {
+  background-color: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  color: #0d9488;
+  border: 1px solid #0d9488;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-custom:hover {
+  background-color: #0d9488;
+  color: #ffffff;
+}
+
+/* Utilitas Warna Aksen */
+.bg-custom {
+  background-color: #0d9488 !important;
+}
+
+.text-custom {
+  color: #0d9488 !important;
+}
+
+/* Efek Kartu Layanan & Tim */
+.card-sederhana {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-sederhana:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Avatar Profil Tim */
+.avatar-bulat {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e2e8f0;
+  transition: transform 0.2s ease;
+}
+
+.card-sederhana:hover .avatar-bulat {
+  transform: scale(1.05);
+}
+
+/* Navigasi */
+.nav-link {
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #0d9488 !important;
+}
