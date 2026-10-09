@@ -1,37 +1,83 @@
-function Header() {
-  return (
-    <div className="bg-white border-bottom sticky-top">
-      <div className="container">
-        <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
-          
-          {/* Bagian Logo Kiri */}
-          <div className="col-md-3 mb-2 mb-md-0">
-            <a href="#home" className="d-inline-flex align-items-center text-dark text-decoration-none">
-              <span 
-                className="bg-custom text-white rounded-3 d-inline-flex align-items-center justify-content-center me-2"
-                style={{ width: '32px', height: '32px', fontSize: '1rem' }}
-              >
-                💻
-              </span>
-              <span className="fs-5 fw-bold">Tech<span className="text-custom">Space</span></span>
-            </a>
-          </div>
+import { NavLink, Link } from 'react-router-dom';
 
-          {/* Menu Navigasi Tengah */}
-          <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#home" className="nav-link px-3 link-secondary fw-semibold">Home</a></li>
-            <li><a href="#team" className="nav-link px-3 link-secondary fw-semibold">Team</a></li>
-            <li><a href="#contact" className="nav-link px-3 link-secondary fw-semibold">Contact</a></li>
+const Header = () => {
+  return (
+    <header className="sticky-top bg-white border-bottom shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-light container py-3">
+        <NavLink to="/" className="navbar-brand fw-bold text-primary d-flex align-items-center gap-2">
+          <span className="fs-4">📚</span>
+          <span className="fs-4 text-dark" style={{ letterSpacing: '-0.5px' }}>BookStore</span>
+        </NavLink>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium gap-lg-3">
+            <li className="nav-item">
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? 'text-primary fw-bold' : 'text-secondary'}`
+                }
+              >
+                Beranda
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/books"
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? 'text-primary fw-bold' : 'text-secondary'}`
+                }
+              >
+                Buku
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/team"
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? 'text-primary fw-bold' : 'text-secondary'}`
+                }
+              >
+                Tim
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? 'text-primary fw-bold' : 'text-secondary'}`
+                }
+              >
+                Kontak
+              </NavLink>
+            </li>
           </ul>
 
-          {/* Tombol Kanan */}
-          <div className="col-md-3 text-end">
-            <button type="button" className="btn btn-outline-custom me-2 fw-semibold">Login</button>
-            <button type="button" className="btn btn-custom fw-semibold">Sign-up</button>
+          <div className="d-flex gap-2">
+            <Link to="/login" className="btn btn-outline-primary btn-sm px-3 fw-semibold">
+              Masuk
+            </Link>
+            <Link to="/register" className="btn btn-primary btn-sm px-3 fw-semibold" style={{ backgroundColor: '#1677ff', borderColor: '#1677ff' }}>
+              Daftar
+            </Link>
           </div>
-
-        </header>
-      </div>
-    </div>
+        </div>
+      </nav>
+    </header>
   );
-}
+};
+
+export default Header;
